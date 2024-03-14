@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Навигатор СПБГЛТУ</title>
+    <!-- Подключение стилей страницы и обнуления -->
+    <link rel="stylesheet" href="./CSS/reset.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <!-- Подключение иконки -->
+    <!-- Ещё подумать, как правильно реализовать иконку -->
+    <link rel="icon" type="image/x-icon" href="./img/Icon.png" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Всё, что на странице, хранится тут -->
+      <header class="header">
+        <div class="routeSearchForm">
+          <div class="routeSearchForm__start">
+            <input
+              class="routeSearchForm__input routeSearchForm__start-input"
+              type="tel"
+              placeholder="Откуда"
+            />
+          </div>
+          <div class="routeSearchForm__end">
+            <input
+              class="routeSearchForm__input routeSearchForm__end-input"
+              type="tel"
+              placeholder="Куда"
+            />
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="notification" id="notification">Маршрут построен!</div>
+      </main>
+      <footer class="footer">
+        <div class="build-route">
+          <button class="build-route__button" onclick="showNotification()">
+            Маршрут
+          </button>
+        </div>
+        <div class="menu">
+          <ul class="menu__list">
+            <!-- Раздел - поиск -->
+            <li class="menu__item">
+              <button class="menu__item-button">
+                <img
+                  class="menu__item-img"
+                  src="./img/icons/Search.png"
+                  alt="Search section"
+                />
+              </button>
+            </li>
+            <!-- Раздел - навигация -->
+            <li class="menu__item">
+              <button class="menu__item-button">
+                <img
+                  class="menu__item-img"
+                  src="./img/icons/Navigation.png"
+                  alt="Navigation section"
+                />
+              </button>
+            </li>
+            <!-- Раздел - настройки -->
+            <li class="menu__item">
+              <button class="menu__item-button">
+                <img
+                  class="menu__item-img"
+                  src="./img/icons/Setting.png"
+                  alt="Setting section"
+                />
+              </button>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <!-- Подключение JS файлов -->
+    <!-- Основной файл -->
+    <script src="./JS/main.js"></script>
+    <!-- "Базы данных -->
+    <!-- Все пути -->
+    <script src="./JS/Data Base/graph.js"></script>
+    <!-- Список кабинетов -->
+  </body>
+</html>
