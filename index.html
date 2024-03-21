@@ -14,33 +14,100 @@
   <body>
     <div class="container">
       <!-- Всё, что на странице, хранится тут -->
-      <header class="header">
-        <div class="routeSearchForm">
-          <div class="routeSearchForm__start">
-            <input
-              class="routeSearchForm__input routeSearchForm__start-input"
-              type="tel"
-              placeholder="Откуда"
-            />
+      <header class="header"></header>
+      <main class="main">
+        <canvas class="map"></canvas>
+        <!-- Ошибки при работе с формой -->
+        <div class="notification" id="notification-done">Маршрут построен!</div>
+        <div
+          class="notification notification--error"
+          id="notification-error-start"
+        >
+          Введите начало маршрута!
+        </div>
+        <div
+          class="notification notification--error"
+          id="notification-error-end"
+        >
+          Введите конец маршрута!
+        </div>
+        <div
+          class="notification notification--error"
+          id="notification-error-both"
+        >
+          Точки маршрута не заданы!
+        </div>
+        <div
+          class="notification notification--error"
+          id="notification-error-equal"
+        >
+          Точки совпадают!
+        </div>
+        <div
+          class="notification notification--error"
+          id="notification-error-not-found"
+        >
+          Кабинет не найден!
+        </div>
+        <div class="tools">
+          <div class="floor">
+            <div class="floor__1">
+              <button onclick="changeFloor(1)" class="floor__button">1</button>
+            </div>
+            <div class="floor__2">
+              <button onclick="changeFloor(2)" class="floor__button">2</button>
+            </div>
+            <div class="floor__3">
+              <button onclick="changeFloor(3)" class="floor__button">3</button>
+            </div>
+            <div class="floor__4">
+              <button
+                onclick="changeFloor(4)"
+                class="floor__button floor__button--last"
+              >
+                4
+              </button>
+            </div>
           </div>
-          <div class="routeSearchForm__end">
-            <input
-              class="routeSearchForm__input routeSearchForm__end-input"
-              type="tel"
-              placeholder="Куда"
-            />
+          <div class="zoom">
+            <div class="zoom__in">
+              <button class="zoom__button" onclick="zoom('+')">+</button>
+            </div>
+            <div class="zoom__out">
+              <button class="zoom__button" onclick="zoom('-')">-</button>
+            </div>
           </div>
         </div>
-      </header>
-      <main class="main">
-        <div class="notification" id="notification">Маршрут построен!</div>
       </main>
       <footer class="footer">
-        <div class="build-route">
-          <button class="build-route__button" onclick="showNotification()">
-            Маршрут
-          </button>
+        <div class="routeSearchForm">
+          <div class="routeSearchForm__wrapper">
+            <div class="routeSearchForm__start">
+              <!-- Окно ввода старта маршрута -->
+              <input
+                class="routeSearchForm__input routeSearchForm__start-input"
+                id="routeStart"
+                type="tel"
+                placeholder="Где я"
+              />
+            </div>
+            <div class="routeSearchForm__end">
+              <!-- Окно ввода конца маршрута -->
+              <input
+                class="routeSearchForm__input routeSearchForm__end-input"
+                id="routeEnd"
+                type="tel"
+                placeholder="Куда нужно"
+              />
+            </div>
+          </div>
+          <div class="build-route">
+            <button class="build-route__button" onclick="routePlan()">
+              Маршрут
+            </button>
+          </div>
         </div>
+
         <div class="menu">
           <ul class="menu__list">
             <!-- Раздел - поиск -->
@@ -80,6 +147,9 @@
     <!-- Подключение JS файлов -->
     <!-- Основной файл -->
     <script src="./JS/main.js"></script>
+    <!-- Карта -->
+    <!-- Управление картой -->
+    <!-- <script src="./JS/tools.js"></script> -->
     <!-- "Базы данных -->
     <!-- Все пути -->
     <script src="./JS/Data Base/graph.js"></script>
