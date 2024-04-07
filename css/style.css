@@ -234,3 +234,8 @@ body {
 .search-form__main-input {
   width: 100%;
 }
+
+.bigmap {
+  max-width: 370px;
+  min-height: 100%;
+}
