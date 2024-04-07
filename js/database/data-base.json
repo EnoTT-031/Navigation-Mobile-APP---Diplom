@@ -1,0 +1,78 @@
+[
+  {
+    "id": 3,
+    "name": "Третий корпус",
+    "classroom": [
+      {
+        "id": "3-100",
+        "name": "Аудитория №3.100",
+        "description": "Для занятий типа - 1",
+        "coordinateX": 100,
+        "coordinateY": 100
+      },
+      {
+        "id": "3-101",
+        "name": "Аудитория №3.101",
+        "description": "Для занятий типа - 1",
+        "coordinateX": 100,
+        "coordinateY": 100
+      },
+      {
+        "id": "3-102",
+        "name": "Аудитория №3.102",
+        "description": "Для занятий типа - 2",
+        "coordinateX": 100,
+        "coordinateY": 100
+      },
+      {
+        "id": "3-103",
+        "name": "Аудитория №3.103",
+        "description": "Для занятий типа - 3",
+        "coordinateX": 100,
+        "coordinateY": 100
+      },
+      {
+        "id": "3-104",
+        "name": "Аудитория №3.104",
+        "description": "Для занятий типа - 4",
+        "coordinateX": 100,
+        "coordinateY": 100
+      },
+      {
+        "id": "3-105",
+        "name": "Аудитория №3.105",
+        "description": "Для занятий типа - 5",
+        "coordinateX": 100,
+        "coordinateY": 100
+      },
+      {
+        "id": "3-106",
+        "name": "Аудитория №3.106",
+        "description": "Для занятий типа - 6",
+        "coordinateX": 100,
+        "coordinateY": 100
+      },
+      {
+        "id": "3-107",
+        "name": "Аудитория №3.107",
+        "description": "Для занятий типа - 7",
+        "coordinateX": 100,
+        "coordinateY": 100
+      },
+      {
+        "id": "3-108",
+        "name": "Аудитория №3.108",
+        "description": "Для занятий типа - 8",
+        "coordinateX": 100,
+        "coordinateY": 100
+      },
+      {
+        "id": "3-109",
+        "name": "Аудитория №3.109",
+        "description": "Для занятий типа - 9",
+        "coordinateX": 100,
+        "coordinateY": 100
+      }
+    ]
+  }
+]

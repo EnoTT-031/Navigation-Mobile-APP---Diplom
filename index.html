@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Навигатор СПБГЛТУ</title>
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Подключение иконки сайта -->
+    <link rel="icon" type="image/x-icon" href="./image/icon.png" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header"></header>
+      <main class="main">
+        <!-- Заготовка под карту -->
+        <canvas class="map"></canvas>
+        <!-- Уведомления для работы с формой поиска -->
+        <div id="notification-done" class="notification">Маршрут построен!</div>
+        <div
+          id="notification-error-start"
+          class="notification notification--error"
+        >
+          Введите начало маршрута!
+        </div>
+        <div
+          id="notification-error-end"
+          class="notification notification--error"
+        >
+          Введите конец маршрута!
+        </div>
+        <div
+          id="notification-error-both"
+          class="notification notification--error"
+        >
+          Точки маршрута не заданы!
+        </div>
+        <div
+          id="notification-error-equal"
+          class="notification notification--error"
+        >
+          Точки маршрута совпадают!
+        </div>
+        <div
+          id="notification-error-not-found"
+          class="notification notification--error"
+        >
+          Кабинет не найден!
+        </div>
+        <!-- Инструменты для работы с картой -->
+        <div class="tools">
+          <!-- Выбор этажа -->
+          <div class="tools__floor">
+            <div class="floor__first">
+              <button onclick="changeFloor(1)" class="floor__button">1</button>
+            </div>
+            <div class="floor__second">
+              <button onclick="changeFloor(2)" class="floor__button">2</button>
+            </div>
+            <div class="floor__third">
+              <button onclick="changeFloor(3)" class="floor__button">3</button>
+            </div>
+            <div class="floor__fourth">
+              <button onclick="changeFloor(4)" class="floor__button">4</button>
+            </div>
+          </div>
+          <!-- Масштаб карты -->
+          <div class="tools__zoom">
+            <div class="zoom__in">
+              <button class="zoom__button" onclick="zoom('+')">+</button>
+            </div>
+            <div class="zoom__out">
+              <button class="zoom__button" onclick="zoom('-')">-</button>
+            </div>
+          </div>
+        </div>
+        <!-- Форма поиска -->
+        <div id="search-form" class="search-form">
+          <div class="search-form__wrapper">
+            <div class="search-form__header">
+              <h2 class="search-form__header-title">Поиск кабинета.</h2>
+              <button class="search-form__header-button">
+                <img src="./image/icons/cross.svg" alt="Close form" />
+              </button>
+            </div>
+            <form class="search-form__main">
+              <input
+                id="searchFormInput"
+                class="search-form__main-input"
+                type="text"
+                placeholder="Номер кабинета."
+              />
+              <ul id="searchFormOutput" class="search-form__main-output">
+                <li class="search-form__main-output-string">Кабинет</li>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <!-- Форма для поиска маршрута -->
+        <div class="routeSearchForm">
+          <div class="routeSearchForm__wrapper">
+            <!-- Ввод начала маршрута -->
+            <div class="routeSearchForm__start">
+              <input
+                id="routeStart"
+                class="routeSearchForm__input routeSearchForm__start-input"
+                type="tel"
+                placeholder="Где я"
+              />
+            </div>
+            <div class="routeSearchForm__end">
+              <input
+                id="routeEnd"
+                class="routeSearchForm__input routeSearchForm__end-input"
+                type="tel"
+                placeholder="Куда нужно"
+              />
+            </div>
+          </div>
+          <div class="routeSearchForm__build-route">
+            <button class="build-route__button" onclick="routePlan()">
+              Маршрут
+            </button>
+          </div>
+        </div>
+        <!-- Меню -->
+        <nav class="menu">
+          <ul class="menu__list">
+            <!-- Поиск -->
+            <li class="menu__item">
+              <button class="menu__item-button" onclick="testForm()">
+                <img
+                  class="menu__item-image"
+                  src="./image/icons/Search.png"
+                  alt="Search section"
+                />
+              </button>
+            </li>
+            <!-- Навигация -->
+            <li class="menu__item">
+              <button class="menu__item-button">
+                <img
+                  class="menu__item-image"
+                  src="./image/icons/Navigation.png"
+                  alt="Navigation section"
+                />
+              </button>
+            </li>
+            <!-- Настройки -->
+            <li class="menu__item">
+              <button class="menu__item-button">
+                <img
+                  class="menu__item-image"
+                  src="./image/icons/Setting.png"
+                  alt="Setting section"
+                />
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/database/graph.js"></script>
+    <script src="./js/search/search.js"></script>
+  </body>
+</html>
