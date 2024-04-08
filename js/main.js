@@ -3,10 +3,6 @@ var canvas = document.querySelector("canvas");
 
 var canvasMap = canvas.getContext("2d");
 
-// canvasMap.fillStyle = "yellow";
-
-// canvasMap.fillRect(10, 10, 100, 100);
-
 // Алгоритм поиска пути
 // Алгоритм Дейкстры
 // На вход передаётся матрица дорог, начальная и конечная точка маршрута
