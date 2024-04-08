@@ -3,9 +3,9 @@ var canvas = document.querySelector("canvas");
 
 var canvasMap = canvas.getContext("2d");
 
-canvasMap.fillStyle = "yellow";
+// canvasMap.fillStyle = "yellow";
 
-canvasMap.fillRect(10, 10, 100, 100);
+// canvasMap.fillRect(10, 10, 100, 100);
 
 // Алгоритм поиска пути
 // Алгоритм Дейкстры
@@ -100,7 +100,7 @@ function routePlan() {
 
   setTimeout(function () {
     notification.style.display = "none";
-  }, 2000);
+  }, 3000);
 
   console.log(graph.hasOwnProperty(valueEnd));
 }
