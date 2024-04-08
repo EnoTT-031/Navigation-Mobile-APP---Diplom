@@ -139,7 +139,7 @@ function searchFormClose() {
 // Поднятие страницы при открытии клавиатуры
 function pageUp() {
   body = document.querySelector("body");
-  body.style.transform = "translateY(-40px)";
+  body.style.transform = "translateY(-260px)";
 }
 
 function pageDown() {
