@@ -3,6 +3,10 @@ var canvas = document.querySelector("canvas");
 
 var canvasMap = canvas.getContext("2d");
 
+// canvasMap.fillStyle = "yellow";
+
+// canvasMap.fillRect(10, 10, 100, 100);
+
 // Алгоритм поиска пути
 // Алгоритм Дейкстры
 // На вход передаётся матрица дорог, начальная и конечная точка маршрута
@@ -131,3 +135,14 @@ function searchFormClose() {
 
 // Нужно сделать проверку, есть ли такой кабинет. Если его нет - pop-up "Нет такого кабинета"
 // Реализовать это через for проверку в графах
+
+// Поднятие страницы при открытии клавиатуры
+function pageUp() {
+  body = document.querySelector("body");
+  body.style.transform = "translateY(-40px)";
+}
+
+function pageDown() {
+  body = document.querySelector("body");
+  body.style.transform = "none";
+}
