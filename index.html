@@ -108,6 +108,8 @@
             <!-- Ввод начала маршрута -->
             <div class="routeSearchForm__start">
               <input
+                onfocus="pageUp()"
+                onblur="pageDown()"
                 id="routeStart"
                 class="routeSearchForm__input routeSearchForm__start-input"
                 type="tel"
@@ -116,6 +118,8 @@
             </div>
             <div class="routeSearchForm__end">
               <input
+                onfocus="pageUp()"
+                onblur="pageDown()"
                 id="routeEnd"
                 class="routeSearchForm__input routeSearchForm__end-input"
                 type="tel"
@@ -124,7 +128,8 @@
             </div>
           </div>
           <div class="routeSearchForm__build-route">
-            <button class="build-route__button" onclick="routePlan()">
+            <!-- !ТУТ ВИСИТ ПОДНЯТИЕ -->
+            <button class="build-route__button" onclick="routePlan(), pageUp()">
               Маршрут
             </button>
           </div>
