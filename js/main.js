@@ -94,7 +94,9 @@ function routePlan() {
   } else {
     const result = dijkstra(graph, valueStart, valueEnd);
     var notification = document.getElementById("notification-done");
-    console.log(result);
+    console.log("Start =", valueStart);
+    console.log("End =", valueEnd);
+    console.log("Path =", result);
   }
   notification.style.display = "block"; // Сам показ уведомления
 
