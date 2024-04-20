@@ -1,6 +1,8 @@
 const classroom = [];
 
-fetch("../database/data-base.json")
+fetch(
+  "https://gist.githubusercontent.com/EnoTT-031/62956d85ad67f7f4e4c8d0395ad756d5/raw/18557aafb9a0271db9a999904a5c145abd45d689/data-base.json"
+)
   .then((res) => res.json())
   .then((data) => {
     console.log("data >>>> ", data);
@@ -35,9 +37,9 @@ function displayOptions() {
         regex,
         `<span class="hl">${this.value}</span>`
       );
-      return `<li><span>${stationName}</span><button class='button-start' onclick=testLogStart()>Старт</button><button class='button-end'>Финиш</button></li>`;
+      return `<li class="search-form__main-output-string"><span>${stationName}</span><div><button class="search-form__main-output-button-start">Откуда</button><button class="search-form__main-output-button-end">Куда</button></div></li>`;
     })
-    .slice(0, 10)
+    .slice(0, 5)
     .join("");
 
   searchOptions.innerHTML = this.value ? html : null;
