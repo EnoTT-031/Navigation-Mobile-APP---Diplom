@@ -213,11 +213,17 @@ body {
   border: none;
 }
 
-/* Форма поиска */
+/* Форма поиска кабинетов */
 .search-form {
-  max-width: 340px;
-  height: 600px;
   display: none;
+  max-width: 340px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fbff00;
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px -3px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .search-form__wrapper {
@@ -230,6 +236,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 auto;
+}
+
+.search-form__header-title {
+  margin: 0 auto;
+}
+
+.search-form__header-button {
+  width: 10px;
+  height: 10px;
 }
 
 .search-form__main-input {
@@ -242,4 +258,29 @@ body {
   background-image: url("../image/map.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.search-form__main-output {
+}
+
+.search-form__main-output-string {
+  list-style-type: none;
+  padding: 10px;
+}
+
+/* ! Запихнуть две кнопки в общий div */
+/* ! Повесить на него margin-top и justify-content: space-between */
+.search-form__main-output-button-start {
+  width: 60px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.search-form__main-output-button-end {
+  width: 60px;
+  height: 30px;
+}
+
+.test-li {
+  background-color: #02b359;
 }
