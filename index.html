@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Подключение иконки сайта -->
+    <!-- TODO: Попробовать правильно подключить иконки -->
+    <!-- TODO; https://www.youtube.com/watch?v=OzBLeZcTjZs&list=LL&index=1 -->
+    <!-- TODO: Разобраться с иконками приложения на Android -->
     <link rel="icon" type="image/x-icon" href="./image/icon.png" />
   </head>
   <body>
@@ -16,7 +19,11 @@
       <main class="main">
         <!-- Заготовка под карту -->
         <canvas class="map"></canvas>
-        <!-- Уведомления для работы с формой поиска -->
+        <div id="map-container">
+          <canvas id="map-elem"></canvas>
+        </div>
+        <!-- * Уведомления для работы с формой поиска -->
+        <!-- !Перенести всё в новый js файл чисто под уведомления -->
         <div id="notification-done" class="notification">Маршрут построен!</div>
         <div
           id="notification-error-start"
@@ -75,27 +82,49 @@
             </div>
           </div>
         </div>
-        <!-- Форма поиска кабинетов -->
+        <!-- !Форма поиска кабинетов -->
         <div id="search-form" class="search-form">
+          <div class="search-form__header">
+            <h2 class="search-form__header-title">Поиск аудитории.</h2>
+            <button
+              onclick="searchFormClose()"
+              class="search-form__header-button"
+            ></button>
+          </div>
           <div class="search-form__wrapper">
-            <div class="search-form__header">
-              <h2 class="search-form__header-title">Поиск кабинета.</h2>
-              <button
-                onclick="searchFormClose()"
-                class="search-form__header-button"
-              >
-                <img src="./image/icons/cross.svg" alt="Close form" />
-              </button>
-            </div>
             <form class="search-form__main">
               <input
                 id="searchFormInput"
                 class="search-form__main-input"
                 type="text"
                 placeholder="Введите номер кабинета."
+                autocomplete="off"
               />
               <ul id="searchFormOutput" class="search-form__main-output"></ul>
             </form>
+          </div>
+        </div>
+        <!-- !Форма настроек приложения -->
+        <div class="setting-form">
+          <div class="setting-form_wrapper">
+            <h2 class="setting-form__title">Настройки приложения</h2>
+            <div class="setting-form__main">
+              <div class="setting-form__language">
+                <!-- TODO: Правильно назвать класс -->
+                <p class="setting-form__language-paragrah">Смена языка</p>
+                <input
+                  class="setting-form__language-button"
+                  type="checkbox"
+                  onclick="checkboxTestLight()"
+                />
+                <input
+                  class="setting-form__language-button"
+                  type="checkbox"
+                  onclick="checkboxTestDark()"
+                />
+              </div>
+              <div class="setting-form__theme"></div>
+            </div>
           </div>
         </div>
       </main>
@@ -112,6 +141,7 @@
                 class="routeSearchForm__input routeSearchForm__start-input"
                 type="tel"
                 placeholder="Где я"
+                autocomplete="off"
               />
             </div>
             <div class="routeSearchForm__end">
@@ -122,6 +152,7 @@
                 class="routeSearchForm__input routeSearchForm__end-input"
                 type="tel"
                 placeholder="Куда нужно"
+                autocomplete="off"
               />
             </div>
           </div>
@@ -172,5 +203,7 @@
     <script src="./js/main.js"></script>
     <script src="./js/database/graph.js"></script>
     <script src="./js/search/search.js"></script>
+    <script src="./js/notification/notification.js"></script>
+    <script src="./js/map/map.js"></script>
   </body>
 </html>
