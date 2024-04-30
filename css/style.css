@@ -1,7 +1,9 @@
 /* Добавление шрифта из файла и применение его ко всему приложению */
 @font-face {
-  font-family: NotoSans-Regular;
-  src: url("./fonts/NotoSans-Regular.ttf");
+  @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 html {
@@ -9,14 +11,13 @@ html {
 }
 
 body {
-  font-family: Raleway-Regular, sans-serif;
+  font-family: "Inter", sans-serif;
   height: 100%;
   position: sticky;
 }
 
 /* Задание контейнера для всего приложения */
 .container {
-  position: relative;
   max-width: 370px;
   min-height: 100%;
   display: flex;
@@ -29,6 +30,8 @@ body {
 /* !Раздел main */
 .main {
   flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .map {
@@ -57,9 +60,10 @@ body {
 
 /* Инструменты карты */
 .tools {
-  position: fixed;
-  top: 20%;
-  left: 85%;
+  position: absolute;
+  top: 60%;
+  left: 90%;
+  transform: translate(-50%, -50%);
 }
 
 /* Смена этажей */
@@ -215,15 +219,40 @@ body {
 
 /* Форма поиска кабинетов */
 .search-form {
-  display: none;
-  max-width: 340px;
+  width: 340px;
   height: 400px;
-  margin: 0 auto;
-  padding: 10px;
-  background-color: #fbff00;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-color: #fafafa;
   border-radius: 20px;
   box-shadow: 0px 5px 15px -3px rgba(0, 0, 0, 0.1);
-  text-align: center;
+}
+
+.search-form__header {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #02b359;
+  border-radius: 20px 20px 0px 0px;
+  /* position: relative; */
+  margin-bottom: 20px;
+}
+
+.search-form__header-button {
+  width: 17px;
+  height: 17px;
+  position: fixed;
+  left: 90%;
+  top: 5%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: transparent;
+  background-image: url(../image/icons/cross.svg);
 }
 
 .search-form__wrapper {
@@ -231,25 +260,30 @@ body {
   margin: 0 auto;
 }
 
-.search-form__header {
-  height: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
-}
-
-.search-form__header-title {
-  margin: 0 auto;
-}
-
-.search-form__header-button {
-  width: 10px;
-  height: 10px;
-}
-
 .search-form__main-input {
-  width: 100%;
+  display: block;
+  width: 320px;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.search-form__main-output-string {
+  display: block;
+  width: 320px;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  background-color: #f1f1f1;
 }
 
 .map {
@@ -258,14 +292,6 @@ body {
   background-image: url("../image/map.jpg");
   background-size: cover;
   background-position: center;
-}
-
-.search-form__main-output {
-}
-
-.search-form__main-output-string {
-  list-style-type: none;
-  padding: 10px;
 }
 
 /* ! Запихнуть две кнопки в общий div */
@@ -283,4 +309,35 @@ body {
 
 .test-li {
   background-color: #02b359;
+}
+
+/* !ТЕСТОВЫЕ СТИЛИ */
+.setting-form__language-button {
+  border-radius: 50%;
+}
+
+/* !Временные стили карты */
+#map-container {
+  height: 100px;
+  width: 100vw;
+  position: relative;
+  background-color: aqua;
+}
+
+#map-elem {
+  position: absolute;
+  background-color: #ffffff;
+  font-size: 1.6em;
+  width: 3840px;
+  height: 2160px;
+  /* width: 100vw;
+  height: 100vh; */
+  background-image: url("../image/full_map.jpg");
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  border-radius: 0.3em;
+  cursor: move;
 }
